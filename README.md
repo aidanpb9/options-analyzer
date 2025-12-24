@@ -41,10 +41,12 @@ Fetches market data with yfinance, estimates historical volatility, computes opt
 ## Example outputs
 
 **Single Option**:
+
 ![Inputs & Output](examples/single_option/inputs&output.png)
 ![Single P&L Chart](examples/single_option/call_270.00_pnl.png)
 
 **Option Chain**:
+
 ![Option Chain CSV](examples/option_chain/option_chain_csv.png)
 ![Chain P&L Chart](examples/option_chain/put_chain_pnl.png)
 ![Chain Greeks Chart](examples/option_chain/put_chain_greeks.png)
