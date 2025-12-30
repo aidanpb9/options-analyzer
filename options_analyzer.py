@@ -273,7 +273,7 @@ def calculate_greeks(S: float, K: float, r: float, t: float, v: float, option_ty
         theta = theta / 365 #for daily theta
 
     gamma = (norm.pdf(d1)) / (S * v * math.sqrt(t))
-    vega = S * norm.pdf(d1) * math.sqrt(t)
+    vega = S * norm.pdf(d1) * math.sqrt(t) / 100
 
     greeks = {
         "delta" : delta,
@@ -370,8 +370,8 @@ def analyze_option_chain(
     for strike in strikes:
         price = black_scholes_pricer(S=current_price, K=strike, r=rate, t=time, v=vol, option_type=option_type)
         greeks = calculate_greeks(S=current_price, K=strike, r=rate, t=time, v=vol, option_type=option_type)
-        data.append({"Strike": strike,
-                     "Price" : price,
+        data.append({"Strike($)": strike,
+                     "Price($)" : price,
                      "Delta" : greeks["delta"],
                      "Gamma" : greeks["gamma"],
                      "Theta" : greeks["theta"],
