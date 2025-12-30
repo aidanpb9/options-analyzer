@@ -370,8 +370,8 @@ def analyze_option_chain(
     for strike in strikes:
         price = black_scholes_pricer(S=current_price, K=strike, r=rate, t=time, v=vol, option_type=option_type)
         greeks = calculate_greeks(S=current_price, K=strike, r=rate, t=time, v=vol, option_type=option_type)
-        data.append({"Strike($)": strike,
-                     "Price($)" : price,
+        data.append({"Strike": strike,
+                     "Price" : price,
                      "Delta" : greeks["delta"],
                      "Gamma" : greeks["gamma"],
                      "Theta" : greeks["theta"],
