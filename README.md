@@ -8,6 +8,27 @@ Fetches market data with yfinance, estimates historical volatility, computes opt
 
 ## Project Architecture
 
+options-analyzer/
+├── src/            
+│ ├── pricer.py            
+│ ├── data.py                   
+│ ├── plots.py                  
+│ ├── utils.py      
+│ └── constants.py 
+│
+├── tests/                      
+│ ├── images/                   
+│ ├── test_calculate_greeks.py
+│ ├── test_calculate_historical_volatility.py
+│ ├── test_calculate_prices.py
+│ └── test_data.py
+│
+├── examples/
+├── output/                
+├── main.py                     
+├── requirements.txt
+└── README.md
+
 ## Features
 
 - Fetches real-time stock prices and historical closing prices.
