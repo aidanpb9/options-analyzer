@@ -2,12 +2,12 @@
 Test suite for data functions:
 get_current_price(), get_closing_prices()
 '''
-
 import pytest
 from unittest.mock import Mock
 import pandas as pd
 import numpy as np
-from options_analyzer import get_current_price, get_closing_prices
+from src.data import get_current_price, get_closing_prices
+
 
 '''get_current_price() tests'''
 '''--------------------------------------------------------------------------'''

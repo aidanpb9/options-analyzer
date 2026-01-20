@@ -1,11 +1,10 @@
 '''
-Test suite for black_scholes_pricer function.
+Test suite for the calculate_price function.
 Verified correct values by hand, shown at tests/images/black_scholes_tests
 Verified cdf values using scipy.stats.norm.cdf.
 '''
-
 import pytest
-from options_analyzer import black_scholes_pricer
+from src.pricer import calculate_price
 
 
 #Test: default call price1
@@ -17,7 +16,7 @@ def test_bspricer_call1():
     t = 0.25
     v = 0.20
     option_type = "call"
-    price = black_scholes_pricer(S, K, r, t, v, option_type=option_type)
+    price = calculate_price(S, K, r, t, v, option_type=option_type)
     assert pytest.approx(price) == verified_price
 
 
@@ -29,7 +28,7 @@ def test_bspricer_call2():
     r = .0028
     t = .72
     v = .003
-    price= black_scholes_pricer(S, K, r, t, v)
+    price= calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price
 
 
@@ -42,7 +41,7 @@ def test_bspricer_put1():
     t = 0.25
     v = 0.20
     option_type = "put"
-    price = black_scholes_pricer(S, K, r, t, v, option_type=option_type)
+    price = calculate_price(S, K, r, t, v, option_type=option_type)
     assert pytest.approx(price) == verified_price
 
 
@@ -55,7 +54,7 @@ def test_bspricer_put2():
     t = .72
     v = .003
     option_type = "put"
-    price = black_scholes_pricer(S, K, r, t, v, option_type=option_type)
+    price = calculate_price(S, K, r, t, v, option_type=option_type)
     assert pytest.approx(price) == verified_price
 
 
@@ -67,7 +66,7 @@ def test_bspricer_rate_zero():
     r = 0
     t = .16
     v = .55
-    price = black_scholes_pricer(S, K, r, t, v)
+    price = calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price
 
 
@@ -79,7 +78,7 @@ def test_bspricer_itm():
     r = .1
     t = .4
     v = .5
-    price = black_scholes_pricer(S, K, r, t, v)
+    price = calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price
 
 
@@ -91,7 +90,7 @@ def test_bspricer_otm():
     r = .1
     t = .4
     v = .5
-    price = black_scholes_pricer(S, K, r, t, v)
+    price = calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price
 
 
@@ -103,7 +102,7 @@ def test_bspricer_atm():
     r = .05
     t = .5
     v = .5
-    price = black_scholes_pricer(S, K, r, t, v)
+    price = calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price
 
 
@@ -115,7 +114,7 @@ def test_bspricer_low_time():
     r = .05
     t = .001
     v = .25
-    price = black_scholes_pricer(S, K, r, t, v)
+    price = calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price
 
 
@@ -127,5 +126,5 @@ def test_bspricer_high_vol():
     r = .05
     t = 1
     v = 2
-    price = black_scholes_pricer(S, K, r, t, v)
+    price = calculate_price(S, K, r, t, v)
     assert pytest.approx(price) == verified_price

@@ -3,10 +3,9 @@ Test suite for data functions.
 Historical vol tests calculated by this tool, verified by real vol 
 at time of test creation, shown at tests/images/historical_vol_tests
 '''
-
 import pytest
 import numpy as np
-from options_analyzer import calculate_historical_volatility as calc_hist_vol
+from src.pricer import calculate_historical_volatility as calc_hist_vol
 
 
 #Test: default case 1 (AAPL 12/20/2025)

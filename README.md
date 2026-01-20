@@ -6,6 +6,7 @@ email: aidanpb9@gmail.com
 A command-line tool for analyzing **European stock options** using the **Black-Scholes model**.  
 Fetches market data with yfinance, estimates historical volatility, computes option prices, Greeks, and visualizes Greeks and P&L for single options or option chains.
 
+## Project Architecture
 
 ## Features
 
