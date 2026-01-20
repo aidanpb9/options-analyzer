@@ -7,7 +7,7 @@ A command-line tool for analyzing **European stock options** using the **Black-S
 Fetches market data with yfinance, estimates historical volatility, computes option prices, Greeks, and visualizes Greeks and P&L for single options or option chains.
 
 ## Project Architecture
-
+```
 options-analyzer/
 ├── src/            
 │ ├── pricer.py            
@@ -28,7 +28,7 @@ options-analyzer/
 ├── main.py                     
 ├── requirements.txt
 └── README.md
-
+```
 ## Features
 
 - Fetches real-time stock prices and historical closing prices.
